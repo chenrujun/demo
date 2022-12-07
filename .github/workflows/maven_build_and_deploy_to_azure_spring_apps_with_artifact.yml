@@ -3,6 +3,8 @@ on: workflow_dispatch
 env:
   ASC_PACKAGE_PATH: ${{ github.workspace }}
   AZURE_SUBSCRIPTION: 471cca20-96cf-49ce-b242-4e67f0e14e19
+  AZURE_SPRING_APPS_SERRVICE_NAME: azure-spring-apps-221207
+  AZURE_SPRING_APPS_APP_NAME: azure-spring-apps-app-221207
 
 jobs:
   maven_build_and_deploy_to_azure_spring_apps_with_artifact:
@@ -27,7 +29,7 @@ jobs:
         with:
           azure-subscription: ${{ env.AZURE_SUBSCRIPTION }}
           action: Deploy
-          service-name: <service instance name>
-          app-name: <app name>
+          service-name: ${{ env.AZURE_SPRING_APPS_SERRVICE_NAME }}
+          app-name: ${{ env.AZURE_SPRING_APPS_APP_NAME }}
           use-staging-deployment: false
           package: ${{ env.ASC_PACKAGE_PATH }}/**/*.jar
