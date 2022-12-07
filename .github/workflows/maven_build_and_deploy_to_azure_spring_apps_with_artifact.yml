@@ -2,7 +2,7 @@ name: Maven Build And Deploy to Azure Spring Apps With Artifact
 on: workflow_dispatch
 env:
   ASC_PACKAGE_PATH: ${{ github.workspace }}
-  AZURE_SUBSCRIPTION: <azure subscription name>
+  AZURE_SUBSCRIPTION: Visual Studio Enterprise Subscription
 
 jobs:
   maven_build_and_deploy_to_azure_spring_apps_with_artifact:
